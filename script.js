@@ -11,11 +11,12 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt("Make a choice: 'rock?','paper?', 'scissors?'");
+    playerChoice = playerChoice.toLowerCase();
     console.log(playerChoice);
     return playerChoice;
 }
 
-// Function to play a single round of Rock
+// Function to play a single round of Rock Paper Scissors
 function playGame(computerSelection, playerSelection) {
 
     computerSelection = getComputerChoice();
@@ -50,21 +51,21 @@ function playGame(computerSelection, playerSelection) {
     if(computerScore > playerScore) {
         console.log("Too bad for you. You lost the game!!!!");
     } else if(computerScore === playerScore) {
-        console.log("It's a try. Try again!");
+        console.log("It's a tie. Try again!");
     }
     else {
         console.log("You're a superstar");
     }
 
 }
-
+// Function to play five rounds of rock paper scissors using both while and for loop
 function game() {
-    /*for (let i = 0; i < 5; i++) {
-        return playGame();
+    /*let i = 0;
+    while(i < 5) {
+        playGame();
+        i++;
     }*/
-    playGame();
-    playGame();
-    playGame();
-    playGame();
-    playGame();
+   for (let i = 0; i < 5; i++) {
+    playGame()
+   }
 }
